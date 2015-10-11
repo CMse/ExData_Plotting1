@@ -1,5 +1,6 @@
 # The file has been subsetted already
 raw_data<-read.csv('household_power_consumption.txt',sep=';')
+y_range=range(0,raw_data$Global_active_power)
 
 plot.new()
 plot(raw_data$Global_active_power,type='l',main='',ann=FALSE, axes=FALSE)
