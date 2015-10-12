@@ -2,8 +2,9 @@
 raw_data<-read.csv('household_power_consumption.txt',sep=';')
 y_range=range(0,raw_data$Global_active_power)
 
-plot.new()
+png(file='plot2.png',width=480,height=480)
 plot(raw_data$Global_active_power,type='l',main='',ann=FALSE, axes=FALSE)
 axis(2,las=1,at=2*0:y_range[2])
 axis(1,las=1,at=c(0,1440,2880),lab=c('Thu','Fri','Sat'))
 title(ylab='Global Active Power (kilowatts)')
+dev.off()
